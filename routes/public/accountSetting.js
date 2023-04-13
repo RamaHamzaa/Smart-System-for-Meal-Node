@@ -16,15 +16,11 @@ router.post('/send/email', async (req, res) => {
     console.log(link);
         const transporter = nodemailer.createTransport({
             service: 'gmail',
-            auth: {user: 'appfood7810@gmail.com', pass: 'clvhlargbmjujfyu'}
+            auth: {user: '', pass: ''}
         });
         await transporter.sendMail({
             from: 'YallaEat',
-            //to:"ramahamza43@gmail.com",
-            //to:"dalalbobes0@gmail.com",
             to: userEmail,
-            //to:'wafaabobes2@gmail.com', 
-            //to:'hala.lk2001@gmail.com',
             subject,
             text,
             html : "Hello,<br> Please Click on the link to verify your email.<br><a href="+link+">Click here to verify</a>"
